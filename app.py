@@ -21,12 +21,15 @@ async def fetLama(prompt1: str):
         "stream": False,
         
     }
-
+ 
     # Make your request and handle the response
     response = llama.run(api_request_json)
-    print(json.dumps(response.json(), indent=2))
-    repli = json.dumps(response.json(), indent=2)
-    content1 = json.loads(repli[0])[0]['choices'][0]['message']['content']
+    json_response1 = json.dumps(response.json(), indent=2)
+    json_response2 = json.loads(json_response1)
+    
+    # Extracting "content"
+    content1 = json_response2["choices"][0]["message"]["content"]
+    
     return {
         content1
     
