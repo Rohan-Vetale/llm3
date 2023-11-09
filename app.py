@@ -8,14 +8,14 @@ app = FastAPI()
 @app.get('/fetLama')
 
 
-async def fetLama(prompt1: str):
+async def fetLama(chara: str, prompt1: str):
     # Initialize the llamaapi with your api_token
     llama = LlamaAPI("LL-2FxqtbBbbOS82FwtvY0awiWv7jTnr1BXkFjDkfZTZEluJRJUZgZSCfK6gtCebXig")
 
     # Define your API request
     api_request_json = {
         "messages": [
-            {"role": "user", "content": prompt1},
+            {"role": "user", "content": "act as "+ chara + " and answer the following question. " + prompt1},
         ],
         
         "stream": False,
