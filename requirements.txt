@@ -1,3 +1,6 @@
-
+aiohttp
+asyncio
+requests
+nest_asyncio
 fastapi
 uvicorn
