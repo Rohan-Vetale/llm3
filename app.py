@@ -25,9 +25,12 @@ async def fetLama(prompt1: str):
     # Make your request and handle the response
     response = llama.run(api_request_json)
     print(json.dumps(response.json(), indent=2))
-
+    repli = json.dumps(response.json(), indent=2)
+    content1 = json.loads(repli[0])[0]['choices'][0]['message']['content']
     return {
-        json.dumps(response.json(), indent=2)
+        content1
+    
+    
     }
 
 
