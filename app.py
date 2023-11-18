@@ -15,7 +15,7 @@ async def fetLama(chara: str, prompt1: str):
     # Define your API request
     api_request_json = {
         "messages": [
-            {"role": "user", "content": "act as "+ chara + ", do not use any non-UTF-8 characters, do not reply with characters that repeats themselves like - oooooo, and answer the following question in english under 50 words. " + prompt1},
+            {"role": "user", "content": "act as "+ chara + ", do not use any non-UTF-8 characters, do not reply with characters that repeats themselves like - oooooo, aaaaa, and shortly answer the following question in english only  " + prompt1},
         ],
         
         "stream": False,
