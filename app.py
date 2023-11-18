@@ -31,7 +31,7 @@ async def fetLama(chara: str, prompt1: str):
     content1 = json_response2
     
     return {
-        content1
+        response
     
     
     }
