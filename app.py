@@ -28,7 +28,7 @@ async def fetLama(chara: str, prompt1: str):
     json_response2 = json.loads(json_response1)
     
     # Extracting "content"
-    content1 = json_response2["choices"][0]["message"]["content"]
+    content1 = json_response2["choices"][0]["message"]
     
     return {
         content1
