@@ -13,7 +13,7 @@ async def fetLama(request: Request):
     llama = LlamaAPI("LL-2FxqtbBbbOS82FwtvY0awiWv7jTnr1BXkFjDkfZTZEluJRJUZgZSCfK6gtCebXig")
 
     # Define your API request
-    api_request_json = request
+    api_request_json = request.json()
  
     # Make your request and handle the response
     
