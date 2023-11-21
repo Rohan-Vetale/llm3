@@ -1,6 +1,7 @@
 import json
 from llamaapi import LlamaAPI
 from fastapi import FastAPI
+import Request
 
 
 
@@ -8,27 +9,20 @@ app = FastAPI()
 @app.post('/fetLama')
 
 
-async def fetLama(chara: str, prompt1: str):
+async def fetLama(request: Request):
     # Initialize the llamaapi with your api_token
     llama = LlamaAPI("LL-2FxqtbBbbOS82FwtvY0awiWv7jTnr1BXkFjDkfZTZEluJRJUZgZSCfK6gtCebXig")
 
     # Define your API request
-    api_request_json = {
-        "messages": [
-            {"role": "user", "content": "act as "+ chara + ", do not use any non-UTF-8 characters, do not reply with characters that repeats themselves like - oooooo, aaaaa, and shortly answer the following question in english only  " + prompt1},
-        ],
-        
-        "stream": False,
-        
-    }
+    api_request_json = request.json()
  
     # Make your request and handle the response
+    
     response = llama.run(api_request_json)
-    json_response1 = json.dumps(response.json(), indent=2)
-    json_response2 = json.loads(json_response1)
-
+    jeso = response.json()
+    json_response1 = json.dumps(response.json())
     # Extracting "content"
-    content1 = json_response2["choices"][0]["message"]["content"]
+    content1 = json_response1["choices"][0]["message"]["content"]
     
     return {
         content1
