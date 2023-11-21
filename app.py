@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 
 app = FastAPI()
-@app.get('/fetLama')
+@app.post('/fetLama')
 
 
 async def fetLama(chara: str, prompt1: str):
