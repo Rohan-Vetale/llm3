@@ -24,14 +24,14 @@ async def fetLama(chara: str, prompt1: str):
  
     # Make your request and handle the response
     response = llama.run(api_request_json)
-   # peso = response.json()
-   # peso = jeso['choices'][0]['message']
-    json_response1 = response.json()
+    jeso = response.json()
+    peso = jeso['choices'][0]
+    
     
     
     
     return {
-        json_response1
+        peso
     
     
     }
