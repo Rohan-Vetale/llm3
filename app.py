@@ -1,7 +1,6 @@
 import json
 from llamaapi import LlamaAPI
-from fastapi import FastAPI
-import requests
+from fastapi import FastAPI, Request
 
 
 
