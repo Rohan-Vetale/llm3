@@ -16,7 +16,7 @@ async def fetLama(chara: str, prompt1: str):
     api_request_json = {
         "messages": [
             {"role": "user", "content": "keep replies short,  do not use any emojis"},
-            {"role": "user", "content": "act as "+ chara + " , do not greet if not asked, and reply the following shortly in english accordingly " + prompt1}
+            {"role": "user", "content": "act as "+ chara + " , do not greet if not asked, and reply the following shortly in plain english language accordingly " + prompt1}
         ],
         
         "stream": False,
